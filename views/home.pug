@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        title #{pageTitle}
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/forms.css")
+        link(rel="stylesheet", href="/css/background.css")
+        link(rel="stylesheet", href="https://www.w3schools.com/w3css/4/w3.css")
+    body
+
+        div(class="topcorner")
+            form(action="/logout", method="POST")
+                .form-control
+                    input(type="hidden", name="_csrf", value=csrfToken)
+                    button.btn(type="submit") Logout
+        
+        main.centered
+            div.image
+                img(src="/images/logo.png", alt="Logo")
+            
+            div.w3-show-inline-block
+                div.w3-bar
+                    .form-control
+                        input(name="question", value=query)#question
+                        button(class="btn w3-btn", type="button", id="search", onclick="searchImages(this)") Search
+                    
+                    form.search-form(action="/upload", method="POST", enctype="multipart/form-data")
+                        .form-control
+                            .upload-btn-wrapper
+                                button.btn1(type="button" id="upload_button" style="cursor: pointer;") Upload
+                                input(type="file", class="w3-btn", name="image")#image
+                                script(src='/javascript/file-upload.js')
+                            
+                            label(id="label_image")
+                            input(type="hidden", name="_csrf", value=csrfToken)
+                            div(id="button_div", style="display: none;")
+                                button(class="btn w3-btn", type="submit", id="search") Upload
+            
+            if images.length > 0
+                .grid(id="divImages")
+                    each image in images
+                        article.card.search-item
+                            header.card__header
+                                .card__image
+                                    img(src=image.filename, alt="Image", style="cursor: pointer;", onclick="showOptions(this)")
+                                .card__actions
+                                    button.btn(type="button" onclick="displayImage(this)" style="visibility: hidden;") View
+                                    button.btn(type="button" onclick="deleteImage(this)" style="visibility: hidden;") Delete
+                                    input(type="hidden" name="imageName" value=image.filename)
+                                    input(type="hidden" name="_csrf" value=csrfToken)
+            else
+                h2 No images to show
+
+        script(src='/javascript/user.js')

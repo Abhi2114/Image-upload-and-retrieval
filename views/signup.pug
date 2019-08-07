@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        title #{pageTitle}
+        link(rel="stylesheet", href="/css/auth.css")
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/background.css")
+    body
+        main
+            form.login-form(action="/signup", method="POST")
+                .form-control
+                    label(for="email") Email
+                    input(type="email", name="email")#email
+                    label(for="password") Password
+                    input(type="password", name="password")#password
+                    label(for="confirmPassword") Confirm Password
+                    input(type="password", name="confirmPassword")#confirmPassword
+                
+                input(type="hidden" name="_csrf" value=csrfToken)
+                .card__actions
+                    button.btn(type="submit") Sign Up
+                    a(href="/login") Returning user? Sign In

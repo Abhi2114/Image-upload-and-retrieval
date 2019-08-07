@@ -1,0 +1,31 @@
+{
+  "name": "google_image_search",
+  "version": "1.0.0",
+  "description": "Image Search",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Abhinit Sati",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-mongodb-session": "^2.1.1",
+    "csurf": "^1.9.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.18",
+    "multer": "^1.4.1",
+    "pug": "^2.0.3",
+    "shortid": "^2.2.14",
+    "@tensorflow-models/mobilenet": "^0.2.2",
+    "@tensorflow/tfjs": "^0.15.3",
+    "@tensorflow/tfjs-node": "^0.3.0",
+    "@tensorflow/tfjs-node-gpu": "^0.3.0",
+    "jpeg-js": "^0.3.4",
+    "node-fetch": "^2.3.0"
+  }
+}
