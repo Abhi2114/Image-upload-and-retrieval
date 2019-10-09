@@ -8,3 +8,9 @@ To run the app:
 ### Install MongoDB locally on your system or set it up on the cloud yourself because the URI in my code won't work for you.
 
 ### All images uploaded will be stored on the server file system and are just pointed to by on the database(the DB only stores references). You can change the code to store them on the database itself(using GridFS) if you like.
+
+Searching for dog and cat photos hasn't been simpler.
+
+![](imup1.PNG)
+
+![](imup2.PNG)
